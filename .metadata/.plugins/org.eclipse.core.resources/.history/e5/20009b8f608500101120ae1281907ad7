@@ -1,0 +1,28 @@
+package programs.java;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.OptionalInt;
+
+public class SecondHighest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] numbers = {10,50,75,20,65,35};
+		
+	OptionalInt second=	Arrays.stream(numbers).distinct().boxed()
+		.sorted(Comparator.reverseOrder()).skip(1)
+		.mapToInt(Integer::intValue)
+		.findFirst();
+	
+	if(second.isPresent()) {
+		System.out.println(second.getAsInt());
+
+	}
+	else {
+		System.out.println("Couldn't find out second highest");
+	}
+	}
+
+}

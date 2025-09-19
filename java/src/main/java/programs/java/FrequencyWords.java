@@ -1,0 +1,26 @@
+package programs.java;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class FrequencyWords {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s = "I LOVE JAVA LOVE";
+         s.toLowerCase();
+		Map<String, Long> n = Arrays.stream(s.split(" "))
+		.collect(Collectors.groupingBy(w -> w, Collectors.counting()));
+		System.out.println(n);
+		//Find duplicates
+		n.entrySet().stream()
+        .filter(entry -> entry.getValue() > 1)
+        .forEach(entry -> System.out.println("Duplicate of word '"
+        +entry.getKey() + "'= " + entry.getValue()));
+}
+
+	}
+
+

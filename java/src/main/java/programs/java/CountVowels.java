@@ -1,0 +1,22 @@
+package programs.java;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class CountVowels {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s ="I LOVE JAVA";
+		
+		Map<Character,Long> mp =s.toLowerCase().chars().mapToObj(ch->(char)ch)
+				.filter(ch->"aeious".indexOf(ch)!=-1)
+		.collect(Collectors.groupingBy(ch->ch,LinkedHashMap::new,Collectors.counting()));
+		
+		System.out.println(mp);
+		
+	}
+
+}

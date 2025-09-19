@@ -1,0 +1,11 @@
+package programs.java;
+
+public class FrequencyWords {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	}
+
+}
