@@ -1,0 +1,26 @@
+package exceptions;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		BankAccount bc = new BankAccount(5000,"Sree");
+		
+		try {
+			
+			bc.WithdrawAmount(4000.00);
+			
+		}
+		catch(InsufficientBalanceException e) {
+            System.out.println("Transaction failed: " + e.getMessage());
+
+		}
+		try {
+            bc.WithdrawAmount(3000.00); // Valid withdrawal
+        } catch (InsufficientBalanceException e) {
+            System.out.println("Transaction failed: " + e.getMessage());
+        }
+	}
+
+}

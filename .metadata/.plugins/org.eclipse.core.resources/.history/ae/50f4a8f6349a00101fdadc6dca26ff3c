@@ -1,0 +1,39 @@
+package collections;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.IntStream;
+
+public class PrintRange {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		//IntStream.rangeClosed(0, 50).filter(n->n%2==0).forEach(System.out::println);
+		//IntStream.rangeClosed(0, 6).filter(n->n%2!=0).forEach(System.out::println);
+		
+		int [] arr = {5,3,2,16,2};
+		// Converted primitive type into stream integer
+		Arrays.stream(arr).distinct()
+		//.boxed()
+		.mapToObj(e->Integer.valueOf(e))
+		.sorted((a,b)->a-b).forEach(System.out::println);
+		
+		List<Integer> num = Arrays.asList(5,3,2,16,2);
+		
+		num.stream().distinct().sorted(Comparator.comparingInt(p->p.intValue()))
+		.forEach(System.out::println);;//Ascending order
+		System.out.println("......................................");
+		num.stream().distinct().sorted((a,b)->a-b)
+		.forEach(System.out::println);;//ASCENDING ORDER
+		
+		System.out.println("......................................");
+
+		
+		num.stream().distinct().sorted((a,b)->b-a)
+		.forEach(System.out::println);;//Descending ORDER
+	}
+
+}

@@ -1,0 +1,21 @@
+package exceptions;
+
+class InsufficientException extends Exception {
+
+	public InsufficientException(String Message) {
+		
+		super(Message);
+	}
+
+	}
+
+public class CustomException {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+	}
+
+}
