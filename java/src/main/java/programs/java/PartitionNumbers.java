@@ -13,7 +13,8 @@ public class PartitionNumbers {
 		
 		 List<Integer> nos = Arrays.asList(5,12,4,8,3,9);
 		 
-		Map<Boolean,List<Integer>> partitioned =nos.stream().collect(Collectors.partitioningBy(num->num%2==0));
+		Map<Boolean,List<Integer>> partitioned =nos.stream()
+				.collect(Collectors.partitioningBy(num->num%2==0));
 		 
 		 System.out.println("Even Nos -> "+partitioned.get(true));
 		 System.out.println("Odd Nos -> "+partitioned.get(false));
